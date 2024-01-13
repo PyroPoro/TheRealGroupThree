@@ -6,6 +6,7 @@ public class PhoneMovement : MonoBehaviour
 {
     // Variable to track phone state
     public static bool isPhoneUp = false;
+    public GameObject phonehand;
 
     //audio variables
     public AudioClip phoneUpSound;
@@ -37,6 +38,7 @@ public class PhoneMovement : MonoBehaviour
             Debug.Log("Phone is up");
             audioSource.clip = phoneUpSound;
             audioSource.PlayOneShot(phoneUpSound);
+            phonehand.GetComponent<Animator>().SetTrigger("toggle");
         }
 
         // Set phone state to false when 'L' key is pressed
@@ -48,6 +50,7 @@ public class PhoneMovement : MonoBehaviour
             Debug.Log("Phone is down");
             audioSource.clip = phoneDownSound;
             audioSource.PlayOneShot(phoneDownSound);
+            phonehand.GetComponent<Animator>().SetTrigger("toggle");
         }
     }
 }
