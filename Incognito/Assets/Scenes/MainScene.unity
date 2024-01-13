@@ -860,6 +860,8 @@ MonoBehaviour:
   startButton: {fileID: 1390898637}
   exitButton: {fileID: 32224637}
   cam: {fileID: 1630803278}
+  phoneController: {fileID: 1620004857}
+  parentController: {fileID: 1129641332}
 --- !u!224 &427867968 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9192550444769657266, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
@@ -2286,7 +2288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891611fc2039a47759d4f90612d5e5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phonehand: {fileID: 0}
+  phonehand: {fileID: 1347502503}
   phoneUpSound: {fileID: 8300000, guid: 085ced210abc24075a8c280b59ae0397, type: 3}
   phoneDownSound: {fileID: 8300000, guid: 0f6851452769d43dc8e29433a8c9f9e1, type: 3}
 --- !u!4 &1620004859

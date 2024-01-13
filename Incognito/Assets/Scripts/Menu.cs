@@ -8,6 +8,8 @@ public class Menu : MonoBehaviour
     public Button startButton;
     public Button exitButton;
     public GameObject cam;
+    public GameObject phoneController;
+    public GameObject parentController;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class Menu : MonoBehaviour
         exitButtonComponent.onClick.AddListener(ExitApplication);
 
         cam.GetComponent<CameraController>().enabled = false;
+        phoneController.GetComponent<PhoneMovement>().enabled = false;
+        parentController.GetComponent<Parent>().enabled = false;
     }
 
     // Update is called once per frame
@@ -30,6 +34,8 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Hide UI");
         cam.GetComponent<CameraController>().enabled = true;
+        phoneController.GetComponent<PhoneMovement>().enabled = true;
+        parentController.GetComponent<Parent>().enabled = true;
         gameObject.SetActive(false);
     }
 
