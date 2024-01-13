@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score = 0;
+    public float score = 0;
     public TMP_Text playerScoreText;
 
     // Start is called before the first frame update
@@ -19,14 +19,15 @@ public class ScoreManager : MonoBehaviour
     {
         if (PhoneMovement.isPhoneUp)
         {
-            score += (int)Mathf.Round(Time.deltaTime);
+            score += Time.deltaTime;
         }
         UpdateScoreText(score);
     }
 
-    private void UpdateScoreText(int score)
+    private void UpdateScoreText(float score)
     {
-        playerScoreText.text = "Score: " + score;
+        int scoreInt = (int) score;
+        playerScoreText.text = "Score: " + (int) score;
     }
 
 
