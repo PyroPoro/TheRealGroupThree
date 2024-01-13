@@ -25,18 +25,20 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             cam.GetComponent<CameraController>().enabled = false;
             paused = true;
+            Time.timeScale = 0;
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
             }
         }
-        //Unpause
+        // Resume
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             pauseMenu.SetActive(false);
             cam.GetComponent<CameraController>().enabled = true;
             paused = false;
+            Time.timeScale = 1;
         }
     }
 }
