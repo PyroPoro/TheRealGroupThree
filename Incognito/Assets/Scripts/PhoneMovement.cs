@@ -5,7 +5,7 @@ using UnityEngine;
 public class PhoneMovement : MonoBehaviour
 {
     // Variable to track phone state
-    public bool isPhoneUp = false;
+    public static bool isPhoneUp = false;
 
     // Start is called before the first frame update
     void Start()

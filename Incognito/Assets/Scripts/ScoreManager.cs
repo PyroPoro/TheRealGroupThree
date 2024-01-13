@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (PhoneMovement.isPhoneUp)
         {
-            score += Mathf.Round(Time.deltaTime);
+            score += (int)Mathf.Round(Time.deltaTime);
         }
     }
 }
