@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                Debug.Log("Exited game");
                 Application.Quit();
             }
         }
