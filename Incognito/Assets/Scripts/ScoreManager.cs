@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TextMeshPro playerScoreObj = GetComponent<TMP_text>();
         UpdateScoreText(0);
     }
 
