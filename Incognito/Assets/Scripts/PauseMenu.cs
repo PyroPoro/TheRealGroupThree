@@ -5,33 +5,38 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    //public Button exitButton;
+    public GameObject pauseMenu;
+    public GameObject cam;
+
     private bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Button exitButtonComponent = exitButton.GetComponent<Button>();
-        //exitButtonComponent.onClick.AddListener(ExitApplication);
-        gameObject.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Pause
         if (Input.GetKeyDown(KeyCode.Space) && !paused)
         {
-            gameObject.SetActive(true);
+            pauseMenu.SetActive(true);
+            cam.GetComponent<CameraController>().enabled = false;
             paused = true;
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
+        //Unpause
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.SetActive(false);
+            pauseMenu.SetActive(false);
+            cam.GetComponent<CameraController>().enabled = true;
             paused = false;
         }
-    }
-
-    void ExitApplication()
-    {
-        Application.Quit();
     }
 }
