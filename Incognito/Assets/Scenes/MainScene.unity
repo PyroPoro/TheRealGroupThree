@@ -311,7 +311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 183865769363753235, guid: 0dd744e977cd804479e916b9e07d48bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3077734315343721326, guid: 0dd744e977cd804479e916b9e07d48bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -391,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369806258950418789, guid: 0dd744e977cd804479e916b9e07d48bf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9026585050488100532, guid: 0dd744e977cd804479e916b9e07d48bf, type: 3}
       propertyPath: m_Name
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   minLower: 2.2
   doorOpenSound: {fileID: 8300000, guid: 11de650bf6904429086ba20ca98570f6, type: 3}
   doorCloseSound: {fileID: 8300000, guid: a8be9c2355dea418e90ab65e30d63e39, type: 3}
-  door: {fileID: 0}
+  door: {fileID: 578879215}
 --- !u!4 &1129641334
 Transform:
   m_ObjectHideFlags: 0
