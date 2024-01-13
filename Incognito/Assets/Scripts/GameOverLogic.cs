@@ -40,6 +40,7 @@ public class GameOverLogic : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R) && isGameOver){
             Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

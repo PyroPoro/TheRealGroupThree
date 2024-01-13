@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585df46f39cb5ce48a3b0e67b81b604e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 233828508}
 --- !u!1 &246463017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2012,7 @@ MonoBehaviour:
   doorOpenSound: {fileID: 8300000, guid: 11de650bf6904429086ba20ca98570f6, type: 3}
   doorCloseSound: {fileID: 8300000, guid: a8be9c2355dea418e90ab65e30d63e39, type: 3}
   door: {fileID: 578879215}
+  doorOpen: 0
 --- !u!4 &1129641334
 Transform:
   m_ObjectHideFlags: 0
@@ -2543,6 +2545,7 @@ MonoBehaviour:
   phonehand: {fileID: 1347502503}
   phoneUpSound: {fileID: 8300000, guid: 085ced210abc24075a8c280b59ae0397, type: 3}
   phoneDownSound: {fileID: 8300000, guid: 0f6851452769d43dc8e29433a8c9f9e1, type: 3}
+  isPhoneNonStatic: 1
 --- !u!4 &1620004859
 Transform:
   m_ObjectHideFlags: 0
