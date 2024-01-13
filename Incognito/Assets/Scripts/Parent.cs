@@ -73,7 +73,10 @@ public class Parent : MonoBehaviour
         audioSource.clip = doorOpenSound;
         Debug.Log("Walk in");
         audioSource.PlayOneShot(doorOpenSound);
-        Invoke("WalkOut", 2f);
+
+        float intervalBetweenInAndOut = Random.Range(1f, 2f);
+
+        Invoke("WalkOut", intervalBetweenInAndOut);
     }
 
     void WalkOut()
