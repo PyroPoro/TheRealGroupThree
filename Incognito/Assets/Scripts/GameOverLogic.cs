@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,8 @@ public class GameOverLogic : MonoBehaviour
     PhoneMovement phoneMovementScript;
 
     public GameObject gameOverCanvas;
+    public GameObject score;
+    public TMP_Text scoreText;
 
     public bool isGameOver = false;
     void Start()
@@ -21,7 +24,6 @@ public class GameOverLogic : MonoBehaviour
         parentScript = parentObject.GetComponent<Parent>();
         phoneMovementScript = phoneMovementObject.GetComponent<PhoneMovement>();
         gameOverCanvas.SetActive(false);
-  
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class GameOverLogic : MonoBehaviour
             Time.timeScale = 0;
             gameOverCanvas.SetActive(true);
             isGameOver = true;
+            scoreText.text = "Score: " + (int)score.GetComponent<ScoreManager>().score;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape) && isGameOver){

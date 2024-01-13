@@ -75,7 +75,7 @@ public class Parent : MonoBehaviour
 
     void WalkIn()
     {
-        doorOpen = true;
+        Invoke("SetDoorOpenTrue", 0.1f);
         audioSource.clip = doorOpenSound;
         Debug.Log("Walk in");
         audioSource.PlayOneShot(doorOpenSound);
@@ -86,10 +86,18 @@ public class Parent : MonoBehaviour
 
     void WalkOut()
     {
-        doorOpen = false;
+        Invoke("SetDoorOpenFalse", 0.1f);
         audioSource.clip = doorCloseSound;
         Debug.Log("Walk out");
         audioSource.PlayOneShot(doorCloseSound);
         door.GetComponent<Animator>().SetTrigger("toggle");
+    }
+
+    public void SetDoorOpenTrue(){
+        doorOpen = true;
+    }
+
+    public void SetDoorOpenFalse(){
+        doorOpen = false;
     }
 }
