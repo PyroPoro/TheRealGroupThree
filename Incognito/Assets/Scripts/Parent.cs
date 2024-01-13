@@ -21,6 +21,8 @@ public class Parent : MonoBehaviour
 
     public GameObject door;
 
+    public bool doorOpen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,7 @@ public class Parent : MonoBehaviour
 
     void WalkIn()
     {
+        doorOpen = true;
         audioSource.clip = doorOpenSound;
         Debug.Log("Walk in");
         audioSource.PlayOneShot(doorOpenSound);
@@ -80,6 +83,7 @@ public class Parent : MonoBehaviour
 
     void WalkOut()
     {
+        doorOpen = false;
         audioSource.clip = doorCloseSound;
         Debug.Log("Walk out");
         audioSource.PlayOneShot(doorCloseSound);
