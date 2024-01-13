@@ -24,12 +24,6 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             paused = true;
             Time.timeScale = 0;
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Debug.Log("Exited game");
-                Application.Quit();
-            }
         }
         // Resume
         else if (Input.GetKeyDown(KeyCode.Space))
@@ -37,6 +31,12 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(false);
             paused = false;
             Time.timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && paused)
+        {
+            Debug.Log("Exited game");
+            Application.Quit();
         }
     }
 }
