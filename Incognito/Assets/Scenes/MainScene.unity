@@ -977,6 +977,7 @@ MonoBehaviour:
   cam: {fileID: 1630803278}
   phoneController: {fileID: 1620004857}
   parentController: {fileID: 1129641332}
+  scoreController: {fileID: 246463017}
 --- !u!224 &427867968 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9192550444769657266, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
@@ -2998,6 +2999,22 @@ PrefabInstance:
     - target: {fileID: 4539616338835672486, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
       propertyPath: m_Name
       value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864507160871958049, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864507160871958049, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864507160871958049, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864507160871958049, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 8269857478975572080, guid: 0fdae01f4f46d9446993bfa38ce11f76, type: 3}
       propertyPath: m_fontSize

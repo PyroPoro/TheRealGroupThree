@@ -5,33 +5,38 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    //public Button exitButton;
+    public GameObject pauseMenu;
+
     private bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Button exitButtonComponent = exitButton.GetComponent<Button>();
-        //exitButtonComponent.onClick.AddListener(ExitApplication);
-        gameObject.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Pause
         if (Input.GetKeyDown(KeyCode.Space) && !paused)
         {
-            gameObject.SetActive(true);
+            pauseMenu.SetActive(true);
             paused = true;
+            Time.timeScale = 0;
         }
+        // Resume
         else if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.SetActive(false);
+            pauseMenu.SetActive(false);
             paused = false;
+            Time.timeScale = 1;
         }
-    }
 
-    void ExitApplication()
-    {
-        Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Escape) && paused)
+        {
+            Debug.Log("Exited game");
+            Application.Quit();
+        }
     }
 }
