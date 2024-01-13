@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public GameObject cam;
 
     private bool paused = false;
 
@@ -23,7 +22,6 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !paused)
         {
             pauseMenu.SetActive(true);
-            cam.GetComponent<CameraController>().enabled = false;
             paused = true;
             Time.timeScale = 0;
 
@@ -36,7 +34,6 @@ public class PauseMenu : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             pauseMenu.SetActive(false);
-            cam.GetComponent<CameraController>().enabled = true;
             paused = false;
             Time.timeScale = 1;
         }
