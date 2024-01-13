@@ -5,7 +5,7 @@ using UnityEngine;
 public class PhoneMovement : MonoBehaviour
 {
     // Variable to track phone state
-    public static bool isPhoneUp = false;
+    public static bool isPhoneUp = true;
     public GameObject phonehand;
 
     //audio variables
