@@ -13,6 +13,8 @@ public class PhoneMovement : MonoBehaviour
     public AudioClip phoneDownSound;
     private AudioSource audioSource;
 
+    public bool isPhoneNonStatic = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class PhoneMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && isPhoneUp == false)
         {
             isPhoneUp = true;
+            isPhoneNonStatic = true;
             //just print for now
             //should trigger animation and show phone in player's hand
             Debug.Log("Phone is up");
@@ -45,6 +48,7 @@ public class PhoneMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && isPhoneUp == true)
         {
             isPhoneUp = false;
+            isPhoneNonStatic = false;
             //just print for now
             //should trigger animation to put phone down
             Debug.Log("Phone is down");
