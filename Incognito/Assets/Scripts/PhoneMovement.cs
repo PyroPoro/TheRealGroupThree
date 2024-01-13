@@ -36,7 +36,7 @@ public class PhoneMovement : MonoBehaviour
             //should trigger animation and show phone in player's hand
             Debug.Log("Phone is up");
             audioSource.clip = phoneUpSound;
-            audioSource.PlayOneShot();
+            audioSource.PlayOneShot(phoneUpSound);
         }
 
         // Set phone state to false when 'L' key is pressed
@@ -47,7 +47,7 @@ public class PhoneMovement : MonoBehaviour
             //should trigger animation to put phone down
             Debug.Log("Phone is down");
             audioSource.clip = phoneDownSound;
-            audioSource.PlayOneShot();
+            audioSource.PlayOneShot(phoneDownSound);
         }
     }
 }
