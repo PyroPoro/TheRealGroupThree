@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     public GameObject cam;
     public GameObject phoneController;
     public GameObject parentController;
+    public GameObject scoreController;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Menu : MonoBehaviour
         cam.GetComponent<CameraController>().enabled = false;
         phoneController.GetComponent<PhoneMovement>().enabled = false;
         parentController.GetComponent<Parent>().enabled = false;
+        scoreController.GetComponent<ScoreManager>().enabled = false;
     }
 
     // Update is called once per frame
@@ -34,8 +36,11 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Hide UI");
         cam.GetComponent<CameraController>().enabled = true;
+        cam.GetComponent<CameraController>().DestroyAnimator();
         phoneController.GetComponent<PhoneMovement>().enabled = true;
         parentController.GetComponent<Parent>().enabled = true;
+        scoreController.GetComponent<ScoreManager>().enabled = true;
+        cam.GetComponent<Animator>().SetTrigger("start");
         gameObject.SetActive(false);
     }
 

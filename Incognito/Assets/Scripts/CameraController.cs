@@ -26,4 +26,12 @@ public class CameraController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
         playerBody.transform.localRotation = Quaternion.Euler(0f, yRot, 0f);
     }
+
+    public void DestroyAnimator(){
+        Invoke("DisableAnimator", 0.25f);
+    }
+
+    void DisableAnimator(){
+        GetComponent<Animator>().enabled = false;
+    }
 }
