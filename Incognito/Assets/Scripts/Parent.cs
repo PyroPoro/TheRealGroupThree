@@ -17,6 +17,7 @@ public class Parent : MonoBehaviour
     // Audio
     public AudioClip doorOpenSound; 
     public AudioClip doorCloseSound; 
+    public AudioClip footsteps;
     private AudioSource audioSource;
 
     public GameObject door;
@@ -45,7 +46,9 @@ public class Parent : MonoBehaviour
         // Check if it's time to print 'hi'
         if (timer >= currentInterval)
         {
-            WalkIn();
+            audioSource.clip = footsteps;
+            audioSource.PlayOneShot(footsteps);
+            Invoke("WalkIn", 1);
             timer = 0f;
 
             // Reduce the interval
