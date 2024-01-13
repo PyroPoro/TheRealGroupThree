@@ -29,7 +29,7 @@ public class PhoneMovement : MonoBehaviour
     void HandleInput()
     {
         // Toggle phone state when 'A' key is pressed
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && isPhoneUp == false)
         {
             isPhoneUp = true;
             //just print for now
@@ -40,7 +40,7 @@ public class PhoneMovement : MonoBehaviour
         }
 
         // Set phone state to false when 'L' key is pressed
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && isPhoneUp == true)
         {
             isPhoneUp = false;
             //just print for now
