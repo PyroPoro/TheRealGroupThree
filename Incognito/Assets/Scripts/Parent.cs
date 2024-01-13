@@ -14,6 +14,11 @@ public class Parent : MonoBehaviour
     public float minUpper;
     public float minLower;
 
+    // Audio
+    public AudioClip doorOpenSound; 
+    public AudioClip doorCloseSound; 
+    private AudioSource audioSource;
+
 
 
     // Start is called before the first frame update
@@ -21,7 +26,13 @@ public class Parent : MonoBehaviour
     {
         currentInterval = Random.Range(upperInterval, lowerInterval);
         timer = 0f;
-        
+        audioSource = GetComponent<AudioSource>();
+
+        // Check if an audio clip is assigned
+        if (doorOpenSound == null)
+        {
+            Debug.LogError("Audio clip not assigned! Please assign an AudioClip in the Unity Editor.");
+        }
     }
 
     // Update is called once per frame
@@ -59,6 +70,16 @@ public class Parent : MonoBehaviour
 
     void WalkIn()
     {
+        audioSource.clip = doorOpenSound;
         Debug.Log("Walk in");
+        audioSource.PlayOneShot(doorOpenSound);
+        Invoke("WalkOut", 2f);
+    }
+
+    void WalkOut()
+    {
+        audioSource.clip = doorCloseSound;
+        Debug.Log("Walk out");
+        audioSource.PlayOneShot(doorCloseSound);
     }
 }
