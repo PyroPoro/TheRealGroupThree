@@ -19,7 +19,7 @@ public class Parent : MonoBehaviour
     public AudioClip doorCloseSound; 
     private AudioSource audioSource;
 
-
+    public GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -73,9 +73,8 @@ public class Parent : MonoBehaviour
         audioSource.clip = doorOpenSound;
         Debug.Log("Walk in");
         audioSource.PlayOneShot(doorOpenSound);
-
         float intervalBetweenInAndOut = Random.Range(1f, 2f);
-
+        door.GetComponent<Animator>().SetTrigger("toggle");
         Invoke("WalkOut", intervalBetweenInAndOut);
     }
 
@@ -84,5 +83,6 @@ public class Parent : MonoBehaviour
         audioSource.clip = doorCloseSound;
         Debug.Log("Walk out");
         audioSource.PlayOneShot(doorCloseSound);
+        door.GetComponent<Animator>().SetTrigger("toggle");
     }
 }

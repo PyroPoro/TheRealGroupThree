@@ -6,6 +6,7 @@ public class PhoneMovement : MonoBehaviour
 {
     // Variable to track phone state
     public static bool isPhoneUp = false;
+    public GameObject phonehand;
 
     //audio variables
     public AudioClip phoneUpSound;
@@ -29,7 +30,7 @@ public class PhoneMovement : MonoBehaviour
     void HandleInput()
     {
         // Toggle phone state when 'A' key is pressed
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && isPhoneUp == false)
         {
             isPhoneUp = true;
             //just print for now
@@ -37,10 +38,11 @@ public class PhoneMovement : MonoBehaviour
             Debug.Log("Phone is up");
             audioSource.clip = phoneUpSound;
             audioSource.PlayOneShot(phoneUpSound);
+            phonehand.GetComponent<Animator>().SetTrigger("toggle");
         }
 
         // Set phone state to false when 'L' key is pressed
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && isPhoneUp == true)
         {
             isPhoneUp = false;
             //just print for now
@@ -48,6 +50,7 @@ public class PhoneMovement : MonoBehaviour
             Debug.Log("Phone is down");
             audioSource.clip = phoneDownSound;
             audioSource.PlayOneShot(phoneDownSound);
+            phonehand.GetComponent<Animator>().SetTrigger("toggle");
         }
     }
 }
